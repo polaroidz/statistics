@@ -8,7 +8,7 @@ np.random.seed(seed=42)
 p_hat = 0.25 #@param
 p_pop = 0.50 #@param
 
-alpha = 0.01 #@param
+alpha = 0.05 #@param
 
 n = 42 #@param
 
