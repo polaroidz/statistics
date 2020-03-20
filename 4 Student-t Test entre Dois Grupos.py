@@ -64,6 +64,7 @@ else:
     print("para afirmar que eles são grupos distintos")
 
 
+# 0.05 pdf para dist t centralizada em 0 (Ho)
 t_null = stats.t.ppf(ci, df=df)
 
 se = diff / (t_null + t_score)
