@@ -24,7 +24,9 @@ b_n = 22 #@param
 ci = 0.95 #@param
 alpha = 1 - ci
 
-df = min(a_n, b_n)
+power = 0.8 #@param
+
+df = min(a_n - 1, b_n - 1)
 t_df = stats.t.ppf(ci, df=df)
 
 # Quando você junta dois dados aumenta a variabilidade geral
@@ -33,6 +35,7 @@ SE = math.sqrt((pow(a_sd, 2) / a_n) + (pow(b_sd, 2) / b_n))
 
 # Diferença entre os dois grupos
 diff = a_mean - b_mean
+diff = abs(diff)
 
 print("Diferenca entre grupos, x_a - x_b =", diff)
 
@@ -59,4 +62,17 @@ else:
     print("Não foi possivel rejeitar Ho")
     print("A diferença entre os grupos não é significativa o suficiente")
     print("para afirmar que eles são grupos distintos")
+
+
+t_null = stats.t.ppf(ci, df=df)
+
+se = diff / (t_null + t_score)
+
+n_ideal = (pow(a_sd, 2) + pow(b_sd, 2)) / pow(se, 2)
+n_ideal = int(n_ideal)
+
+print("Número de Amostras Ideal")
+print("Número usado:", df + 1)
+print("Número ideal:", n_ideal)
+
 
