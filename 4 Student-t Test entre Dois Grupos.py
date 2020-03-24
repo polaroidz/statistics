@@ -11,17 +11,17 @@ np.random.seed(seed=42)
 # 3. A distribuição das amostras deve ser próxima da normal (checar skewness);
 
 # Grupo A (Controle)
-a_mean = 52.1 #@param
-a_sd = 45.1 #@param
-a_n = 22 #@param
+a_mean = 3.78 #@param
+a_sd = 1.03 #@param
+a_n = 7 #@param
 
 # Grupo B (Experimento)
-b_mean = 27.1 #@param
-b_sd = 26.4 #@param
-b_n = 22 #@param
+b_mean = 2.85 #@param
+b_sd = 0.83 #@param
+b_n = 7 #@param
 
 # Parametros do Experimento
-ci = 0.95 #@param
+ci = 0.90 #@param
 alpha = 1 - ci
 
 power = 0.8 #@param
